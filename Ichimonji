@@ -3397,7 +3397,6 @@ local win = VLib:Window("MagMaHub", "Blox Fruit", Color3.fromRGB(252, 83, 83))
                    if RaidsArua and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 and (v.HumanoidRootPart.Position-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 500 then
                       pcall(function()
                          repeat wait(.1)
-                            print("Mammos Hub No.1")
                          until not RaidsArua or not v.Parent or v.Humanoid.Health <= 0
                       end)
                    end
@@ -3839,13 +3838,13 @@ local win = VLib:Window("MagMaHub", "Blox Fruit", Color3.fromRGB(252, 83, 83))
                 game:GetService("RunService").RenderStepped:Wait()
              end
        end)
-       LegendarySwordDealerTime = Misc:Label("Join Server Fast Wait 10 - 15 Minute")
+       LegendarySwordDealerTime = Misc:Label("Joined Server Too Fast, Wait 10 - 15 Minutes")
        spawn(function()
          while true do wait(30)
             if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Manager","2") == "Hey, I just saw him! He told me he would be in the area for 5 minutes. Good luck!" then
                LegendarySwordDealerTime:Refresh("NPC Legendary Sword Dealer Spawn !!!!")
             elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Manager","2") == -2 then
-               LegendarySwordDealerTime:Refresh("Join Server Fast Wait 10 - 15 Minute")
+               LegendarySwordDealerTime:Refresh("Joined Server Too Fast, Wait 10 - 15 Minutes")
             else
                LegendarySwordDealerTime:Refresh("NPC Legendary Sword Dealer Not Spawn")
             end
@@ -4009,7 +4008,7 @@ local win = VLib:Window("MagMaHub", "Blox Fruit", Color3.fromRGB(252, 83, 83))
              end
           end
        end)
-       Misc:Button("Remove Lave",function()
+       Misc:Button("Remove Lava",function()
           for i,v in pairs(game.Workspace:GetDescendants()) do
              if v.Name == "Lava" then   
                 v:Destroy()
@@ -4347,9 +4346,6 @@ local win = VLib:Window("MagMaHub", "Blox Fruit", Color3.fromRGB(252, 83, 83))
 
           Teleport()
       end)
-     Setting:line()
-     Setting:Button("Copy link discord",function()
-        setclipboard("https://discord.gg/wAqCmsk4qx")
      end)
      Setting:Button("Destroy Gui",function()
         Library:Destroy()
